@@ -1,7 +1,5 @@
 #include <iostream>
 
-#include <limits>
-
 #include "Bitproxy.h"
 
 int main(int argc, char* argv[])
@@ -11,11 +9,11 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    int val = atoi(argv[1]);
+    auto val = atoi(argv[1]);
 
     bitproxy::Bitproxy<int> bp(val);
 
-    for(int i = 0; i < bp.minsize(); i++)
+    for(auto i = 0; i < bp.minsize(); i++)
     {
         std::cout << "Bit " << i << ": " << bp[i] << std::endl;
     }
